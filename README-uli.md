@@ -18,12 +18,12 @@ Version veröffentlichen
 - Neuen Stand von README-uli.md in Git speichern: `git commit -m 0.2 README-uli.md"
 - Git-Tag erzeugen: `git tag 0.2`
 - Git-Tag an Github übertragen: `git push --tags`
-- Bauen: `go build -o "files-md-server" ./cmd/server`
-- Verpacken: `tar -cf - ./files-md-server ./web|xz -c9 >"files-md-$(git describe --tags).tar.xz"`
+- Bauen: `go build -o "bin/files-md-server" ./cmd/server`
+- Verpacken: `tar -cf - ./files-md-server ./web|xz -c9 >"files-md-$(git describe --tags)-$(uname|tr A-Z a-z)-$(uname -m).tar.xz"`
 - Virencheck
 - Signieren
 - Release auf Github erzeugen
-- Hochladen: files-md-0.2.tar.xz, files-md-0.2.tar.xz.virustotal.json, files-md-0.2.tar.xz.ssh-sig
+- Hochladen: files-md-0.2-linux-x86_64.tar.xz, files-md-0.2-linux-x86_64.tar.xz.virustotal.json, files-md-0.2-linux-x86_64.tar.xz.ssh-sig
 
 Module aktualisieren
 --------------------
@@ -53,6 +53,11 @@ Go-Module. Sie liegen unterhalb von "vendor".
 
 Versionen und Änderungen
 ------------------------
+
+### 0.3 - Dritte Testversion
+
+- OS und ARCH in Dateinamen aufgenommen (files-md-0.3-linux-x86_64.tar.xz)
+- Server-Binary nach "bin"
 
 ### 0.2 - Zweite Testversion
 
