@@ -18,12 +18,13 @@ Version veröffentlichen
 - Neuen Stand von README-uli.md in Git speichern: `git commit -m 0.2 README-uli.md"
 - Git-Tag erzeugen: `git tag 0.2`
 - Git-Tag an Github übertragen: `git push --tags`
-- Bauen: `go build -o "bin/files-md-server" ./cmd/server`
-- Verpacken: `tar -cf - ./files-md-server ./web|xz -c9 >"files-md-$(git describe --tags)-$(uname|tr A-Z a-z)-$(uname -m).tar.xz"`
+- Bauen: `go build -o "files-md-server-0.2/bin/files-md-server" ./cmd/server`
+- Web-Verzeichnis kopieren: `cp -a web files-md-server-0.2/web"
+- Verpacken: `tar -cf - files-md-server-0.2|xz -c9 >"files-md-server-0.2-$(uname|tr A-Z a-z)-$(uname -m).tar.xz"`
 - Virencheck
 - Signieren
 - Release auf Github erzeugen
-- Hochladen: files-md-0.2-linux-x86_64.tar.xz, files-md-0.2-linux-x86_64.tar.xz.virustotal.json, files-md-0.2-linux-x86_64.tar.xz.ssh-sig
+- Hochladen: files-md-server-0.2-linux-x86_64.tar.xz, files-md-server-0.2-linux-x86_64.tar.xz.virustotal.json, files-md-server-0.2-linux-x86_64.tar.xz.ssh-sig
 
 Module aktualisieren
 --------------------

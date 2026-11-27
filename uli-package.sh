@@ -1,8 +1,13 @@
 #!/bin/sh
 
-#set -x
 VERSION="$(git describe --tags)"
 OS="$(uname|tr A-Z a-z)"
 ARCH="$(uname -m)"
-go build -o "bin/files-md-server" ./cmd/server
-tar -cf - ./bin ./web|xz -c9 >"files-md-${VERSION}-${OS}-${ARCH}.tar.xz"
+
+(
+set -x
+go build -o "files-md-server-${VERSION}/bin/files-md-server" ./cmd/server
+cp -a web files-md-server-${VERSION}/web
+tar -cf - "files-md-server-${VERSION}"|xz -c9 >"files-md-server-${VERSION}-${OS}-${ARCH}.tar.xz"
+)
+rm -rf "files-md-server-${VERSION}"
