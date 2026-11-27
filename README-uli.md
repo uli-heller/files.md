@@ -55,6 +55,11 @@ Go-Module. Sie liegen unterhalb von "vendor".
 Versionen und Änderungen
 ------------------------
 
+### 0.4 - Vierte Testversion
+
+- Verzeichnis in TAR-Datei aufgenommen
+- TAR-Datei umbenannt - heißt nun wie Server-Binary
+
 ### 0.3 - Dritte Testversion
 
 - OS und ARCH in Dateinamen aufgenommen (files-md-0.3-linux-x86_64.tar.xz)
