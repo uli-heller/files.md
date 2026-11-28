@@ -47,7 +47,7 @@ Go-Module. Sie liegen unterhalb von "vendor".
   ```
 - Module aktualisieren: `go get -u ./...`
 - Module aufräumen: `go mod tidy`
-- "vendor"-O=rdner aktualisieren:
+- "vendor"-Ordner aktualisieren:
   - `rm -rf vendor`
   - `go mod vendor`
   - `git add vendor`
